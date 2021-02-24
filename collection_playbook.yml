@@ -1,0 +1,11 @@
+---
+- name: Run a module from inside a collection 
+  hosts: localhost
+  
+  tasks:
+  - name: Gather some real Facts.
+    newswangerd.demo.real_facts:
+      name: ABC
+    register: testout
+  - debug:
+      msg: "{{ testout }}"
